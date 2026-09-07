@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clínica de la Convergencia - Dr. Rubén M. Pereyra</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; background-color: #f9f9f9; }
+        header { background: #1a365d; color: #fff; text-align: center; padding: 2.5rem 1rem; }
+        .container { max-width: 800px; margin: 2rem auto; background: #fff; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+        .book-info { display: flex; flex-wrap: wrap; gap: 2rem; align-items: center; margin-bottom: 2rem; }
+        .book-cover { flex: 1; text-align: center; background: #eee; padding: 1rem; border-radius: 6px; min-height: 250px; display: flex; align-items: center; justify-content: center; border: 2px dashed #ccc; overflow: hidden; }
+        .book-cover img { width: 100%; height: auto; border-radius: 4px; object-fit: cover; max-height: 350px; }
+        .author-section { display: flex; align-items: center; gap: 1.5rem; background: #f0f4f8; padding: 1.5rem; border-radius: 6px; margin: 2rem 0; }
+        .author-photo { width: 100px; height: 100px; border-radius: 50%; background: #ccc; display: flex; align-items: center; justify-content: center; border: 2px solid #1a365d; flex-shrink: 0; overflow: hidden; }
+        .author-photo img { width: 100%; height: 100%; object-fit: cover; }
+        .bank-details { background: #eef2f7; padding: 1.5rem; border-radius: 6px; margin: 1.5rem 0; border-left: 4px solid #1a365d; }
+        .form-group { margin-bottom: 1rem; }
+        label { display: block; margin-bottom: .5rem; font-weight: bold; }
+        input, textarea { width: 100%; padding: 0.75rem; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
+        .btn-whatsapp { display: block; width: 100%; background: #25d366; color: white; text-align: center; padding: 1rem; font-size: 1.1rem; font-weight: bold; text-decoration: none; border-radius: 4px; margin-top: 1.5rem; transition: background 0.3s; border: none; cursor: pointer; }
+        .btn-whatsapp:hover { background: #1ebd59; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Clínica de la Convergencia</h1>
+        <p>Imágenes prismáticas de Psicoanálisis y Neurociencias</p>
+        <p><strong>Dr. y Mgter. Rubén M. Pereyra</strong></p>
+    </header>
+
+    <div class="container">
+        
+        <!-- SECCIÓN DE IMÁGENES -->
+        <div class="book-info">
+            <div class="book-cover">
+                <!-- FOTO DE PORTADA INTEGRADA -->
+                <img src="Portada.jpg" alt="Portada del libro Clínica de la Convergencia" onerror="this.style.display='none'; document.getElementById('error-portada').style.display='block';">
+                <p id="error-portada" style="color: #666; font-size: 0.9rem; display:none;">[ Espacio para la foto de la portada real del libro ]</p>
+            </div>
+            <div>
+              <h2>Adquiere tu ejemplar impreso</h2>
+              <p>Una obra fundamental que articula la metapsicología analítica con la neurobiología afectiva para transformar la praxis clínica cotidiana.</p>
+              <p><strong>Precio de venta:</strong> $35.000 ARS</p>
+            </div>
+        </div>
+
+        <!-- SECCIÓN AUTOR -->
+        <div class="author-section">
+            <div class="author-photo">
+                <!-- FOTO DEL AUTOR INTEGRADA -->
+                <img src="foto.jpeg" alt="Dr. y Mgter. Rubén M. Pereyra">
+            </div>
+            <div>
+                <h3>Sobre el autor</h3>
+                <p><strong>Dr. y Mgter. Rubén M. Pereyra</strong><br>Rubén M. Pereyra es Médico Cirujano, Lic. en Psicología, Especialista en clínica psicoanalítica focalizada, Mgter. en Neuropsicología y Doctor en Psicología con Orientación en Neurociencias Cognitivas Aplicadas. Es el creador y director del programa de formación *Clínica de la Convergencia*, un espacio académico y clínico pionero dedicado a tender puentes teóricos y prácticos entre la metapsicología psicoanalítica y la neurobiología afectiva. Con una sólida trayectoria en la asistencia clínica y la docencia universitaria, su labor se centra en renovar la teoría de la técnica analítica, dotando a los profesionales de herramientas de precisión para intervenir sobre los padecimientos contemporáneos —desde el trauma y los trastornos psicosomáticos hasta el impacto de la era digital—, siempre desde la convicción de que la rigurosidad científica y la calidez humana deben marchar inseparables.</p>
+            </div>
+        </div>
+
+        <hr style="margin: 2rem 0; border: 0; border-top: 1px solid #eee;">
+
+        <!-- DATOS BANCARIOS -->
+        <h2>Datos para Transferencia Bancaria</h2>
+        <div class="bank-details">
+            <p><strong>Banco:</strong> PRAXYS S.A.</p>
+            <p><strong>Titular:</strong> Rubén M. Pereyra</p>
+            <p><strong>CBU / CVU:</strong> 0000139300000006331902</p>
+            <p><strong>Alias:</strong> 20169031275.belo</p>
+            <p><strong>CUIT / CUIL:</strong> 20169031275</p>
+        </div>
+
+        <!-- FORMULARIO DE PEDIDO VÍA WHATSAPP -->
+        <h2>Completa tus datos para realizar el pedido</h2>
+        <form id="orderForm" onsubmit="enviarWhatsApp(event)">
+            <div class="form-group">
+                <label for="nombre">Nombre y Apellido:</label>
+                <input type="text" id="nombre" required placeholder="Tu nombre completo">
+            </div>
+
+            <div class="form-group">
+                <label for="direccion">Dirección de Envío (Calle, Ciudad, Provincia):</label>
+                <textarea id="direccion" rows="2" required placeholder="Indica dónde deseas recibir el ejemplar"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="cantidad">Cantidad de ejemplares:</label>
+                <input type="number" id="cantidad" value="1" min="1" required>
+            </div>
+
+            <!-- BOTÓN QUE CONECTA DIRECTAMENTE CON WHATSAPP -->
+            <button type="submit" class="btn-whatsapp">Enviar pedido y comprobante por WhatsApp</button>
+        </form>
+
+    </div>
+
+    <script>
+        function enviarWhatsApp(event) {
+            event.preventDefault();
+            
+            // CAPTURA LOS DATOS DEL FORMULARIO
+            const nombre = document.getElementById('nombre').value;
+            const direccion = document.getElementById('direccion').value;
+            const cantidad = document.getElementById('cantidad').value;
+            
+            // NÚMERO DE WHATSAPP DESTINATARIO
+            const telefonoWhatsApp = "5493517648987";
+            
+            // CREA EL MENSAJE AUTOMÁTICO
+            const mensaje = `Hola! Realicé la transferencia por el libro *Clínica de la Convergencia*.\n\n*Datos del comprador:*\n- Nombre: ${nombre}\n- Dirección de envío: ${direccion}\n- Cantidad: ${cantidad} ejemplar(es)\n\nAdjunto a continuación el comprobante de pago:`;
+            
+            // REDIRECCIONA A WHATSAPP WEB / APP
+            const url = `https://wa.me/${telefonoWhatsApp}?text=${encodeURIComponent(mensaje)}`;
+            window.open(url, '_blank');
+        }
+    </script>
+</body>
+</html>
